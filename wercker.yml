@@ -11,10 +11,10 @@ dev:
     - script:
       name: go get
       code: |
-        cd $WERKER_SOURCE_DIR
+        cd $WERCKER_SOURCE_DIR
         go version
         go get -u github.com/Masterminds/glide
-        export PATH=$WERKER_SOURCE_DIR/bin:$path
+        export PATH=$WERCKER_SOURCE_DIR/bin:$path
         glide install
 
     - internal/watch:
@@ -33,10 +33,10 @@ build:
     - script:
         name: go get
         code: |
-          cd $WERKER_SOURCE_DIR
+          cd $WERCKER_SOURCE_DIR
           go version
           go get -u github.com/Masterminds/glide
-          export PATH=$WERKER_SOURCE_DIR/bin:$PATH
+          export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
           glide install
 
     - script:
@@ -52,7 +52,7 @@ build:
     - script:
         name: copy files to werker output
         code: |
-          cp -R ./ ${WERKER_OUTPUT_DIR}
+          cp -R ./ ${WERCKER_OUTPUT_DIR}
 
 deploy:
   steps:
