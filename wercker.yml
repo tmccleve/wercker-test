@@ -62,5 +62,5 @@ deploy:
         cmd: /pipeline/source/hello
         port: "8080"
         tag: latest
-        repository: tmccleve/werker-test
+        repository: tmccleve/wercker-test
         registry: https://registry.hub.docker.com
